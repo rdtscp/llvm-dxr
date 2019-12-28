@@ -1,5 +1,5 @@
 # llvm-dxr
-Use with Heroku to deploy a DXR Source Indexer for LLVM code base.
+Docker Solution for using the DXR Source Indexer for the LLVM code base.
 
 ## Dependencies
  - https://github.com/rdtscp/dxr
