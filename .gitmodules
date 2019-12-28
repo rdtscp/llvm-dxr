@@ -1,6 +1,3 @@
-[submodule "indexer/bloom_filter"]
-	path = indexer/bloom_filter
-	url = https://github.com/rdtscp/bloom_filter.git
 [submodule "indexer/llvm-project"]
 	path = indexer/llvm-project
 	url = https://github.com/llvm/llvm-project.git
