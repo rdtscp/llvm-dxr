@@ -4,4 +4,4 @@ FROM dxr:latest
 COPY dxr.config /home/
 
 # Serve.
-CMD cd /home/ ; /home/dxr/venv/bin/dxr serve --all
+CMD cd /home/ ; /venv/bin/dxr serve --all
