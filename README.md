@@ -38,3 +38,4 @@ docker run --rm llvm_dxr_indexer:latest
  - Have the web server use WSGI with Apache, which [the docs](https://dxr.readthedocs.io/en/latest/deployment.html#serving-your-index) state is better for production use-cases.
  - Use a single `dxr.config` file to avoid duplicating information. (May need to use docker-compose)
  - Have the indexer/web containers know how to contact the ES container(s). (May need to use docker-compose)
+ - Look into possibility of having some "persistent" storage (but still containerised) for the `llvm` source/build to reduce re-indexing/re-building times.
