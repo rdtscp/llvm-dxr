@@ -1,3 +1,0 @@
-[submodule "indexer/llvm-project"]
-	path = indexer/llvm-project
-	url = https://github.com/llvm/llvm-project.git
