@@ -10,13 +10,9 @@ Docker Solution for using the DXR Source Indexer for the LLVM code base.
 ## Local Usage
 
 ```
-# Build DXR
-git clone https://github.com/rdtscp/dxr.git
-docker build ./dxr/ -t dxr:latest
-
-# Obtain LLVM and Docker Files for Deploying DXR
-git clone https://github.com/rdtscp/llvm-dxr.git
+git clone https://github.com/rdtscp/llvm-dxr.git --recursive
 cd ./llvm-dxr/
+docker build -f "dxr/Dockerfile" -t dxr:latest dxr
 docker-compose -f "docker-compose.yml" up --build 
 open http://localhost:8000
 
