@@ -21,8 +21,5 @@ RUN wget https://github.com/swig/swig/archive/rel-3.0.12.tar.gz \
   && make\
   && make install
 
-# Copy the config.
-COPY dxr.config /home/
-
 # Index.
-CMD /venv/bin/dxr index -c /home/dxr.config --verbose
+CMD cp /config/dxr.config /home/ && /venv/bin/dxr index -c /home/dxr.config --verbose
