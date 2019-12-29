@@ -1,0 +1,19 @@
+version: "3"
+services:
+  elasticsearch:
+    build: ./elasticsearch
+    expose:
+      - 9200
+
+  frontend:
+    build: ./frontend
+    links:
+      - elasticsearch
+    ports:
+      - 8000:8000
+
+  indexer:
+    build: ./indexer
+    links:
+      - elasticsearch
+    restart: on-failure
