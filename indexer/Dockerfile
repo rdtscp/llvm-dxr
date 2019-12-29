@@ -2,14 +2,10 @@ FROM dxr:latest
 
 RUN apt-get update
 
-# Copy the source.
-COPY ./llvm-project /home/llvm-project/
-RUN mkdir /home/llvm-project/build/
-
 # Get dependencies.
 RUN apt-get install -y \
   automake autotools-dev \
-  bison cmake flex libedit-dev \
+  bison cmake flex git libedit-dev \
   libedit2 libpcre3 libpcre3-dev \
   pcregrep wget
 
@@ -21,5 +17,10 @@ RUN wget https://github.com/swig/swig/archive/rel-3.0.12.tar.gz \
   && make\
   && make install
 
+COPY ./get_source.sh /home/
+
 # Index.
-CMD cp /config/dxr.config /home/ && /venv/bin/dxr index -c /home/dxr.config --verbose
+CMD cp /config/dxr.config /home/ \
+  && bash /home/get_source.sh \
+  && sleep 15s \
+  && /venv/bin/dxr index -c /home/dxr.config --verbose
