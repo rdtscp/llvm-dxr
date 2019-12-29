@@ -1,7 +1,6 @@
 FROM dxr:latest
 
-# Copy the config.
-COPY dxr.config /home/
+WORKDIR /home/
 
 # Serve.
-CMD cd /home/ ; /venv/bin/dxr serve --all
+CMD cp /config/dxr.config /home/ && /venv/bin/dxr serve --all

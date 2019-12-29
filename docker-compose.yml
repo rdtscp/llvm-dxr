@@ -11,9 +11,13 @@ services:
       - elasticsearch
     ports:
       - 8000:8000
+    volumes:
+      - ./config:/config
 
   indexer:
     build: ./indexer
     links:
       - elasticsearch
     restart: on-failure
+    volumes:
+      - ./config:/config
